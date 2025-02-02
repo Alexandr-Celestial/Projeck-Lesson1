@@ -28,7 +28,7 @@ def mask_account_card(info_number: str) -> str:
     :return:
     """
     parts_of_info_number = info_number.split()
-    account_type = ' '.join(parts_of_info_number[:-1])
+    account_type = " ".join(parts_of_info_number[:-1])
     number = parts_of_info_number[-1]
     if len(number) == 16:
         mask_result = get_mask_card_number(int(number))
@@ -44,8 +44,6 @@ def get_date(str_date: str) -> str:
     :param str_date:
     :return:
     """
-    str_date = datetime.strptime(str_date, "%Y-%m-%dT%H:%M:%S.%f")
-    # "2024-03-11T02:26:18.671407"
+    str_datetime = datetime.strptime(str_date, "%Y-%m-%dT%H:%M:%S.%f")
 
-    return str_date.strftime("%d.%m.%Y")
-
+    return str(str_datetime.strftime("%d.%m.%Y"))

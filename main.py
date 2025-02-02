@@ -1,6 +1,6 @@
-from src.masks import mask_account_card, get_date
+from src.masks import get_date, mask_account_card
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     test_card_1 = mask_account_card("Maestro 1596837868705199")
     test_card_2 = mask_account_card("Счет 64686473678894779589")
     test_card_3 = mask_account_card("Visa Platinum 8990922113665229")
