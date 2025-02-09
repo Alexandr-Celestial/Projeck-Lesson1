@@ -1,4 +1,4 @@
-from src.masks import get_date, mask_account_card
+from src.widget import mask_account_card, get_date
 
 if __name__ == "__main__":
     test_card_1 = mask_account_card("Maestro 1596837868705199")
