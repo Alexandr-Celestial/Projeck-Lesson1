@@ -18,4 +18,3 @@
 git@github.com:Alexandr-Celestial/Projeck-Lesson1.git
 2. Установите зависимости:
 Используйте Poetry для создания виртуального окружения и установки зависимостей, включая инструменты разработки такие как: flake 8, black, isort и mypy
-3. 
