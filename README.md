@@ -24,3 +24,30 @@ git@github.com:Alexandr-Celestial/Projeck-Lesson1.git
 pytest --cov=src --cov-report=html
 ```
 Отчет о покрытии кода будет создан в папке Отчет будет сгенерирован в папке `htmlcov` и храниться в файле с названием `index.html`
+# Генераторы
+## Модуль generators
+Этот модуль содержит функции-генераторы для обработки данных транзакций.
+### Функция filter_by_currency
+Функция фильтрует транзакции по указанной валюте.
+```
+from src.generators import filter_by_currency
+transactions = [ваши данные о транзакциях]
+usd_transactions = filter_by_currency(transactions, 'USD')
+for transaction in usd_transactions:
+print(transaction)
+```
+### Функция transaction_descriptions
+Функция возвращает описание каждой операции по очереди.
+```
+from src.generators import transaction_descriptions
+descriptions = transaction_descriptions(transactions)
+for description in descriptions:
+print(description)
+```
+### Функция card_number_generator
+Генератор для создания номеров банковских карт в заданном диапазоне.
+```
+from src.generators import card_number_generator
+for card_number in card_number_generator(1, 5):
+print(card_number)
+```
