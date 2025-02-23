@@ -13,7 +13,7 @@ def sample_data() -> list[dict]:
 
 
 @pytest.fixture()
-def sample_transactions():
+def sample_transactions() -> list[dict]:
     """Фикстура для предоставления тестовых данных о транзакции"""
     return [
         {
