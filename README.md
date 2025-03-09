@@ -19,6 +19,7 @@ git@github.com:Alexandr-Celestial/Projeck-Lesson1.git
 2. Установите зависимости:
 Используйте Poetry для создания виртуального окружения и установки зависимостей, включая инструменты разработки такие как: flake 8, black, isort и mypy
 ## Тестирование
+Для тестирования проекта используется библиотека `pytest`. Тесты написаны для всех функций проекта и находятся в директории `tests/`.
 Для запуска тестов выполните следующую команду:
 ```
 pytest --cov=src --cov-report=html
@@ -61,4 +62,24 @@ def my_function(x, y):
 return x + y
 
 my_function(1, 2)
+```
+## Модуль utils
+Модуль `utils` содержит функцию для чтения JSON-файла.
+### Функция read_json_file
+Читает JSON-файл и возвращает список словарей с данными о финансовых транзакциях.
+```transactions = read_json_file('data/operations.json')```
+## Модуль external_api
+Модуль `external_api` содержит функцию для конвертации валют.
+### Функция convert_currency
+Конвертирует сумму транзакции в рубли.
+```
+transaction = {
+'operationAmount': {
+'amount': '100.0',
+'currency': {
+'code': 'USD'
+}
+}
+}
+amount_in_rub = convert_currency(transaction)
 ```

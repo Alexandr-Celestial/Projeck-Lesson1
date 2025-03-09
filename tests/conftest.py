@@ -38,3 +38,9 @@ def sample_transactions() -> list[dict]:
             "description": "Перевод со счета на счет",
         },
     ]
+
+
+@pytest.fixture
+def mock_response() -> dict:
+    """Фикстура для предоставления mock-ответа от API с курсом валют"""
+    return {"rates": {"RUB": 75.0}}
