@@ -1,7 +1,10 @@
 import json
+import os
 from pathlib import Path
 
 from src.utils import read_json_file
+
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 def test_read_json_file() -> None:
