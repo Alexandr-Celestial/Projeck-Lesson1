@@ -1,6 +1,10 @@
+import os
+
 import pytest
 
 from src.masks import get_mask_account, get_mask_card_number
+
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 @pytest.mark.parametrize(
