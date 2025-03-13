@@ -83,3 +83,31 @@ transaction = {
 }
 amount_in_rub = convert_currency(transaction)
 ```
+##Чтение CSV и Excel файлов
+Проект поддерживает чтение финансовых операций из CSV и Excel файлов благодаря библиотеке `pandas`.
+### Установка pandas
+Для использования функций необходимо установить `pandas`. Вы можете сделать это с помощью Poetry:
+```
+poetry add pandas
+```
+### Примеры использования
+#### Чтение CSV файла
+```from src.data_loader import read_csv_file```
+Пример чтения CSV файла
+```
+file_path = "data/transactions.csv"
+transactions = read_csv_file(file_path)
+print(transactions)
+```
+#### Чтение Excel файла
+```from src.data_loader import read_excel_file```
+Пример чтения Excel файла
+```
+file_path = "data/transactions_excel.xlsx"
+transactions = read_excel_file(file_path)
+print(transactions)
+```
+### Тестирование
+Для тестирования функций используйте команду:
+```pytest tests/test_data_loader.py```
+Эта команда запустит тесты для функций чтения CSV и Excel файлов.
