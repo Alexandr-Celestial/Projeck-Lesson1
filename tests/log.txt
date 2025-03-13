@@ -1,0 +1,8 @@
+Начало выполнения функции example_function с аргументами: args=(), kwargs={}
+Функция example_function завершилась успешно. Результат: Success
+Начало выполнения функции example_function с аргументами: args=(), kwargs={}
+Функция example_function завершилась с ошибкой: Test exception
+Начало выполнения функции example_function с аргументами: args=(), kwargs={}
+Функция example_function завершилась успешно. Результат: Success
+Начало выполнения функции example_function с аргументами: args=(), kwargs={}
+Функция example_function завершилась с ошибкой: Test exception

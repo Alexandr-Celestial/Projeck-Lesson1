@@ -1,6 +1,6 @@
-import json, os
+import json
 import logging
-
+import os
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -11,6 +11,7 @@ file_handler.setLevel(logging.DEBUG)
 file_formatter = logging.Formatter("%(asctime)s %(name)s %(levelname)s: %(message)s")
 file_handler.setFormatter(file_formatter)
 utils_logger.addHandler(file_handler)
+
 
 def read_json_file(file_path: str = "") -> list:
     """Функция читает список словарей и данными о финансовых транзакциях"""
