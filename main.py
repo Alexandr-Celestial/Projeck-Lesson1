@@ -40,7 +40,7 @@ def main() -> None:
         except Exception as e:
             print(f"Произошла ошибка: {e}")
 
-    file_paths = {
+    file_paths: dict = {
         "1": ("data/operations.json", read_json_file),
         "2": ("data/transactions.csv", read_csv_file),
         "3": ("data/transactions_excel.xlsx", read_excel_file),
@@ -85,7 +85,7 @@ def main() -> None:
         print(f"Произошла ошибка при фильтрации: {e}")
         return
 
-    operations = [
+    operations: list[tuple] = [
         ("Отсортировать операции по дате", "Да/Нет", sort_by_date),
         ("Выводить только рублевые транзакции", "Да/Нет", lambda x: x),
         ("Отфильтровать список транзакций по определенному слову в описании", "Да/Нет", search_by_description),

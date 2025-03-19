@@ -1,3 +1,5 @@
+import pytest
+
 from src.search import count_categories, search_by_description
 
 
@@ -45,8 +47,7 @@ def test_count_categories() -> None:
         {"description": "Оплата в магазине"},
         {"description": "Перевод на карту"},
     ]
-    expected_result: dict[str, int] = {"Оплата в магазине": 2, "Оплата ЖКХ": 1, "Перевод на карту": 1}
-    assert count_categories(transactions) == expected_result
+    assert count_categories(transactions) == {}
 
 
 def test_count_categories_empty() -> None:
@@ -61,3 +62,18 @@ def test_count_categories_no_description() -> None:
     transactions: list[dict] = [{"id": 1}, {"id": 2}, {"id": 3}]
     expected_result: dict[str, int] = {}
     assert count_categories(transactions) == expected_result
+
+
+@pytest.mark.parametrize(
+    ("list_of_categories", "expected_result"),
+    [
+        (["Перевод организации"], {"Перевод организации": 1}),
+        (
+            ["Перевод организации", "Перевод со счета на счет"],
+            {"Перевод организации": 1, "Перевод со счета на счет": 2},
+        ),
+    ],
+)
+def test_counter_categories(sample_transactions: list[dict], list_of_categories: list, expected_result: dict) -> None:
+    """Тест функции"""
+    assert count_categories(sample_transactions, list_of_categories) == expected_result

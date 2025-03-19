@@ -12,11 +12,11 @@ def search_by_description(transactions: list[dict], search_string: str) -> list[
     return result
 
 
-def count_categories(transactions: list[dict]) -> dict:
+def count_categories(transactions: list[dict], list_of_categories: list = []) -> dict:
     """Функция для подсчёта банковских операций по определённой категории"""
-    categories_count: Counter[str] = Counter()
-    for transaction in transactions:
-        if "description" in transaction:
-            description = transaction["description"]
-            categories_count[description] += 1
-    return dict(categories_count)
+    transaction_categories = [
+        transaction["description"]
+        for transaction in transactions
+        if "description" in transaction and transaction["description"] in list_of_categories
+    ]
+    return dict(Counter(transaction_categories))
